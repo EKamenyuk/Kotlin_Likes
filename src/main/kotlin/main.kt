@@ -1,9 +1,21 @@
-fun main() {
-    val likes = 31  // изменяемая величина. количество лайков
-    val result = likes % 10
-    if (2 <= likes && likes <= 20) println("Понравилось " + likes + " человекам")
-    else if (result == 1) println("Понравилось " + likes + " человеку")
-    else println("Понравилось " + likes + " людям")
+fun printWord(likes: Int) {
+  var textPeople = ""
+    if ( likes % 10 == 1 || likes % 100 == 1) textPeople = "человеку "
+    else if (likes < 2 && likes <= 20) textPeople = "людям"
+    else textPeople = "человекам"
+    println(" Понравилось $likes $textPeople")
+
 }
+fun main(args: Array<String>) {
+
+    val likes = 16     // вводимая (изменяемая величина)
+    printWord(likes)
+}
+
+
+
+
+
+
 
 
